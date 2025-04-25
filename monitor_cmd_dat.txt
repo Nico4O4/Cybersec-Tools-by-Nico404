@@ -1,4 +1,0 @@
-@echo off
-title Netzwerkmonitor
-python C:\Users\nicop\Desktop\Cybersecurity\monitor.py
-pause
