@@ -20,4 +20,4 @@ for a in range(1,256):
         print(f"[-] Keine Antwort von: {ip} erhalten") # falls der Ping nicht erfolgreich war, wird die IP-Adresse ausgegeben mit dem string "Keine Antwort von: "
     print("-------------------------------------------------") # für die Trennung
 
-    # coded by: Nico404
+    # coded by: Nico404 
