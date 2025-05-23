@@ -69,10 +69,15 @@ while True: # Schleife für den IP Adressen Check ob es eine gültige IP ist und
             print("beendet ")
             exit()
 
-        if menu == "Q": # wenn man "Q" eingibt kehrt man zur 1. Schleife zurück  (1 von 3 Schleifen)
+        if menu == "Q": # wenn man "Q" eingibt kehrt man zur 1. Schleife zurück  (1 von 2 Schleifen)
             break
 
         else:
             print("Ungültige Eingabe")
 
-# coded by: Nico40
+# coded by: Nico404
+
+# AUFGABEN:
+
+# 1. Ipv6 support
+# UDP support ertsmal gestrichen
