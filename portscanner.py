@@ -1,14 +1,14 @@
-import socket #zum verbinden mit dem Ziel
+import socket #zum verbinden mit dem Ziel als eine art "Leitung"
 import datetime #für den Scanzeitpunkt
+import sys
 
 
 found_ports_open = [] # Liste für die offenen Ports
 
 def scanned_ports():
     return found_ports_open # gibt die Liste der offenen Ports zurück
-
-print("""
-   ____        _      __      ____             __                                          
+                                          
+art = r"""   ____        _      __      ____             __                                          
   / __ \__  __(_)____/ /__   / __ \____  _____/ /_                                         
  / / / / / / / / ___/ //_/  / /_/ / __ \/ ___/ __/                                         
 / /_/ / /_/ / / /__/ ,<    / ____/ /_/ / /  / /_                                           
@@ -16,13 +16,17 @@ print("""
   _________  ____/ /__  ____/ /  / /_  __  ___    / | / /  _/ ____/ __ \/ // / / __ \/ // /
  / ___/ __ \/ __  / _ \/ __  /  / __ \/ / / (_)  /  |/ // // /   / / / / // /_/ / / / // /_
 / /__/ /_/ / /_/ /  __/ /_/ /  / /_/ / /_/ /    / /|  // // /___/ /_/ /__  __/ /_/ /__  __/
-\___/\____/\__,_/\___/\__,_/  /_.___/\__, (_)  /_/ |_/___/\____/\____/  /_/  \____/  /_/   
-                                    /____/                                                """) # ASCII Art für den Portscanner
+/___/\____/\__,_/\___/\__,_/  /_.___/\__, (_)  /_/ |_/___/\____/\____/  /_/  \____/  /_/   
+                                    /____/                                                """
+print(art)
+
 
 while True: # Schleife für den IP Adressen Check ob es eine gültige IP ist und nnicht abc123
     print("-------------------------------------------------") # für die Trennung    
-    ziel = input("Gib die IP-Adresse ein: ")# Hier die IP-Adresse anpassen
-    print("-------------------------------------------------") # für die Trennung
+    print("IP-Adresse einngeben oder 'e/E' zum beenden")
+    ziel = input("Eingabe ->  ")# Hier eine Auswahl treffen
+    if ziel.lower() == "e":
+        sys.exit()
     
     try: 
         socket.gethostbyname(ziel)
@@ -51,7 +55,9 @@ while True: # Schleife für den IP Adressen Check ob es eine gültige IP ist und
         found_ports_open.append(port) # wenn der Port offen ist, wird die Portnummer in die Liste "found_ports_open" hinzugefüg    
 
         netz.close() # am ende wird die Verbindung geschlossen 
-
+    
+    print("-------------------------------------------------") # für die Trennung
+    print("-------------------------------------------------") # für die Trennung
     print("-------------------------------------------------") # für die Trennung damit es schöner aussieht
 
     time = datetime.datetime.now() # für den Scanzeitpunkt am ende 
@@ -67,7 +73,7 @@ while True: # Schleife für den IP Adressen Check ob es eine gültige IP ist und
     
         if menu == "E": # wenn man "E"eingibt wird das Programm beendet
             print("beendet ")
-            exit()
+            sys.exit()
 
         if menu == "Q": # wenn man "Q" eingibt kehrt man zur 1. Schleife zurück  (1 von 2 Schleifen)
             break
@@ -79,5 +85,5 @@ while True: # Schleife für den IP Adressen Check ob es eine gültige IP ist und
 
 # AUFGABEN:
 
-# 1. Ipv6 support
-# UDP support ertsmal gestrichen
+# Konsolen clearing hinzufügen
+# 2. Ipv6 support - kommt bald
