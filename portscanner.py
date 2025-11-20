@@ -87,3 +87,4 @@ while True: # Schleife für den IP Adressen Check ob es eine gültige IP ist und
 
 # Konsolen clearing hinzufügen
 # 2. Ipv6 support - kommt bald
+# github problem lösen / dateien verschwinden ??
